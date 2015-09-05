@@ -27,7 +27,7 @@ public class Shield : MonoBehaviour {
 		if(Time.timeScale > 0){ // can only shoot if not paused
 			
 			// Shield usage
-			if(Input.GetMouseButton(0) && useShieldButton.HitTest(Input.mousePosition)){
+			if(Input.GetKey(KeyCode.Space)){
 				if(shieldIsUp == false){
 					if(useShieldButton.name == "UseShield"){
 						shieldIsUp = true;
@@ -49,7 +49,7 @@ public class Shield : MonoBehaviour {
 					}
 				}
 			}
-			else if(Input.GetMouseButtonUp(0)){
+			else {
 				if(shieldIsUp == true){
 					shieldIsUp = false;
 					PlayerPrefs.SetInt ( "shieldUp", 0);
