@@ -77,17 +77,17 @@ public class GunDisplay : MonoBehaviour {
 			
 			// Pop up choices
 			if (/*currentSelection != "HMG" &&*/ GUI.Button (new Rect (Screen.width*(float)0.79, Screen.height*(float)0.62, Screen.width*(float)0.2, Screen.height*(float)0.2), HMG)) { // bottom
-				guiTexture.texture = HMG;
+				GetComponent<GUITexture>().texture = HMG;
 				currentSelection = "HMG";
 				selectionOpen = false;
 			}
 			else if(/*currentSelection != "Shotgun" &&*/ GUI.Button (new Rect (Screen.width*(float)0.79, Screen.height*(float)0.4, Screen.width*(float)0.2, Screen.height*(float)0.2), Shotgun)) { // middle
-				guiTexture.texture = Shotgun;
+				GetComponent<GUITexture>().texture = Shotgun;
 				currentSelection = "Shotgun";
 				selectionOpen = false;
 			}
 			else if(/*currentSelection != "Pistol" &&*/ GUI.Button (new Rect (Screen.width*(float)0.79, Screen.height*(float)0.18, Screen.width*(float)0.2, Screen.height*(float)0.2), Pistol)) { // top
-				guiTexture.texture = Pistol;
+				GetComponent<GUITexture>().texture = Pistol;
 				currentSelection = "Pistol";
 				selectionOpen = false;
 			}

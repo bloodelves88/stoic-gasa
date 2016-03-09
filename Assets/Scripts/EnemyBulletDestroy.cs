@@ -68,7 +68,7 @@ public class EnemyBulletDestroy : MonoBehaviour {
 	
 	IEnumerator PlayOuch(){
 		yield return new WaitForSeconds(0.5F);
-		audio.PlayOneShot(takeDamage);
+		GetComponent<AudioSource>().PlayOneShot(takeDamage);
 		yield return new WaitForSeconds(0.5F);
 		yield break;
 	}

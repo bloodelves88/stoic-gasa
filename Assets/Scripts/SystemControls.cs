@@ -43,7 +43,7 @@ public class SystemControls : MonoBehaviour {
 				{	
 					// Unpause the game
 					Time.timeScale = 1;
-					pauseButtonscript.guiTexture.texture = pauseButtonscript.button1;
+					pauseButtonscript.GetComponent<GUITexture>().texture = pauseButtonscript.button1;
 					//Application.LoadLevel("mainMenu");
 				}
 				else if(Application.loadedLevelName == "mainMenu")

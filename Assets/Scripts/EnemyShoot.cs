@@ -35,7 +35,7 @@ public class EnemyShoot : MonoBehaviour
 		Enemy e = enemy.GetComponent<Enemy>();
 		//only attacks when enemy is in attack state 
 		//if(e.current == Enemy.States.Attack && e.positionOriginal >= e.transform.position.y)
-		if(e.current == Enemy.States.Attack && !(e.animation.isPlaying))
+		if(e.current == Enemy.States.Attack && !(e.GetComponent<Animation>().isPlaying))
 		{
 
 			if(Time.time - nextFire > fireRate){
@@ -51,7 +51,7 @@ public class EnemyShoot : MonoBehaviour
 				else{
 					clone = Instantiate(m_PrefabBullet, transform.position+new Vector3(5F,7F,-4F), transform.rotation) as GameObject;
 				}
-				audio.PlayOneShot(bearShoot);
+				GetComponent<AudioSource>().PlayOneShot(bearShoot);
 				//Debug.Log ("Bullet position = " + clone.transform.position.x + " " + clone.transform.position.y + " "+ clone.transform.position.z);
 				//Debug.Log ("Target position = " + (player.transform.position - transform.position).x + " " + (player.transform.position - transform.position).y + " "+ (player.transform.position - transform.position).z);
 				
@@ -94,7 +94,7 @@ public class EnemyShoot : MonoBehaviour
 				}
 
 				// Adds a force to the bullet so it can move
-				clone.rigidbody.velocity = ((player.transform.position + randomOffset - transform.position));
+				clone.GetComponent<Rigidbody>().velocity = ((player.transform.position + randomOffset - transform.position));
 			}
 		}
 	}

@@ -63,7 +63,7 @@ public class Shield : MonoBehaviour {
 	IEnumerator PistolReload(){
 		while(gunDisplayScript.ammoCountPistol < 6){
 			gunDisplayScript.ammoCountPistol++;
-			audio.PlayOneShot(pistolReload);
+			GetComponent<AudioSource>().PlayOneShot(pistolReload);
 			yield return new WaitForSeconds(0.1F);
 		}
 		reloading = false;
@@ -75,7 +75,7 @@ public class Shield : MonoBehaviour {
 			if(gunDisplayScript.ammoCountTotalShotgun > 0){
 				gunDisplayScript.ammoCountTotalShotgun--;
 				gunDisplayScript.ammoCountShotgun++;
-				audio.PlayOneShot(shotgunReload);
+				GetComponent<AudioSource>().PlayOneShot(shotgunReload);
 				yield return new WaitForSeconds(0.5F);
 			}
 			else{
@@ -92,7 +92,7 @@ public class Shield : MonoBehaviour {
 			if(gunDisplayScript.ammoCountTotalHMG > 0){
 				gunDisplayScript.ammoCountTotalHMG--;
 				gunDisplayScript.ammoCountHMG++;
-				audio.PlayOneShot(hmgReload);
+				GetComponent<AudioSource>().PlayOneShot(hmgReload);
 				yield return new WaitForSeconds(0.05F);
 			}
 			else{

@@ -98,7 +98,7 @@ public class LifeCounter : MonoBehaviour {
 				//Handheld.Vibrate();
 			}
 			if(playedHeartBeat == false){
-				audio.PlayOneShot(heartBeat);
+				GetComponent<AudioSource>().PlayOneShot(heartBeat);
 				playedHeartBeat = true;
 			}
 		}
@@ -124,7 +124,7 @@ public class LifeCounter : MonoBehaviour {
 	}
 	
 	IEnumerator PlayDie(){
-		audio.PlayOneShot(die);
+		GetComponent<AudioSource>().PlayOneShot(die);
 		yield return new WaitForSeconds(1.0F);
 		Application.LoadLevel ("GameOver");
 		yield break;
@@ -132,7 +132,7 @@ public class LifeCounter : MonoBehaviour {
 	
 	IEnumerator PlayOuch(){
 		yield return new WaitForSeconds(0.5F);
-		audio.PlayOneShot(takeDamage);
+		GetComponent<AudioSource>().PlayOneShot(takeDamage);
 		yield return new WaitForSeconds(0.5F);
 		yield break;
 	}
